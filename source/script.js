@@ -1,6 +1,10 @@
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 
+var dateModified = new Date(document.lastModified)
+var message = 'Chart update last checked on ' + dateModified
+document.getElementById('dateModified').innerHTML = message
+
 /* Google by default draws the chart on 600px by 371px canvas. Access to the canvas using CSS is limited,
 so the function below does some magic to fit the chart on smaller screens */
 $(function () {
