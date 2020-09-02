@@ -1,3 +1,5 @@
+/* global $, getPluginParameter */
+
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 $('#chart').hide()
