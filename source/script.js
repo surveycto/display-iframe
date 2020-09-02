@@ -1,5 +1,7 @@
 /* global $, getPluginParameter */
 
+var dateModifiedContainer = document.getElementById('dateModified')
+
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 $('#chart').hide()
@@ -23,18 +25,18 @@ checkConnectivity.isInternetConnected().done(function () {
   $('.loading-container').hide() // Hide the loading section.
   $('#chart').show() // Hide the loading section.
   drawChart()
-  document.getElementById('dateModified').innerHTML = message
+  dateModifiedContainer.innerHTML = message
 }).fail(function (jqXHR, textStatus, errorThrown) {
   // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
   $('.loading-container').hide() // Hide the loading section.
-  document.getElementById('dateModified').innerHTML = errorMessage
+  dateModifiedContainer.innerHTML = errorMessage
 })
 
 function refresh () {
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
   $('#chart').show() // Hide the loading section.
   drawChart()
-  document.getElementById('dateModified').innerHTML = message
+  dateModifiedContainer.innerHTML = message
   document.getElementById('chart-frame').src = document.getElementById('chart-frame').src
 }
 
