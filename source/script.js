@@ -37,7 +37,7 @@ function refresh () {
   $('#chart').show() // Hide the loading section.
   drawChart()
   dateModifiedContainer.innerHTML = message
-  document.getElementById('chart-frame').src = document.getElementById('chart-frame').src
+  document.getElementById('chart-frame').src = document.getElementById('chart-frame').src // reload iframe.
 }
 
 function drawChart () {
