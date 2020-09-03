@@ -42,7 +42,7 @@ function refresh () {
 
 function drawChart () {
   /* Google by default draws the chart on 600px by 371px canvas. Access to the canvas using CSS is limited,
-  so the function below does some magic to fit the chart on smaller screens */
+  so the function below resizes the iframe parent container first and then resizes the iframe to fit the chart on smaller screens */
   $(function () {
     $('#chart').each(function () {
       var $wrap = $(this)
