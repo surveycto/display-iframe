@@ -1,3 +1,7 @@
+/* global $, getPluginParameter */
+
+var dateModifiedContainer = document.getElementById('dateModified')
+
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 $('#chart').hide()
@@ -21,24 +25,24 @@ checkConnectivity.isInternetConnected().done(function () {
   $('.loading-container').hide() // Hide the loading section.
   $('#chart').show() // Hide the loading section.
   drawChart()
-  document.getElementById('dateModified').innerHTML = message
+  dateModifiedContainer.innerHTML = message
 }).fail(function (jqXHR, textStatus, errorThrown) {
   // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
   $('.loading-container').hide() // Hide the loading section.
-  document.getElementById('dateModified').innerHTML = errorMessage
+  dateModifiedContainer.innerHTML = errorMessage
 })
 
 function refresh () {
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
   $('#chart').show() // Hide the loading section.
   drawChart()
-  document.getElementById('dateModified').innerHTML = message
+  dateModifiedContainer.innerHTML = message
   document.getElementById('chart-frame').src = document.getElementById('chart-frame').src
 }
 
 function drawChart () {
   /* Google by default draws the chart on 600px by 371px canvas. Access to the canvas using CSS is limited,
-  so the function below does some magic to fit the chart on smaller screens */
+  so the function below resizes the iframe parent container first and then resizes the iframe to fit the chart on smaller screens */
   $(function () {
     $('#chart').each(function () {
       var $wrap = $(this)
