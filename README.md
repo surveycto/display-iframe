@@ -31,8 +31,9 @@ The plug-in works on a [text field](https://docs.surveycto.com/02-designing-form
 | --- | --- |
 | `link (required)` | The link generated in Google sheets. You can follow the steps in [this article](https://support.google.com/docs/answer/1047436?co=GENIE.Platform%3DDesktop&hl=en) to get the link to your chart. |
 
-> **Example:**  
-> To display this [sample chart](https://docs.google.com/spreadsheets/d/1MPdvQXLbRaX6OD6EoA4OS-p0OxjUnn4m3rsC1JPdG6U/edit#gid=135270451) in the form, you would have the following in the appearance column:
+## Example:
+
+To display this [sample chart](https://docs.google.com/spreadsheets/d/1MPdvQXLbRaX6OD6EoA4OS-p0OxjUnn4m3rsC1JPdG6U/edit#gid=135270451) in the form, you would have the following in the appearance column:
 
 `custom-display-graph(link="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnMZpxa6JZjIuM8I9yowgtuyrkXBDcP_ULnJoNHjuD7zGacUX0g4zVSmYnfaAD6rSCTPwvsiDKOmxb/pubchart?oid=1569534844&format=interactive")`
 
