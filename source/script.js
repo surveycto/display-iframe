@@ -7,7 +7,7 @@ $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 $('#chart').hide()
 
 var dateModified = new Date(document.lastModified)
-var message = 'Last Updated ' + dateModified
+var message = 'Last updated ' + dateModified
 var errorMessage = 'Sorry, this is taking while! Are you connected to the internet? Wait a few moments, and try the Refresh button.'
 
 var checkConnectivity = {
