@@ -28,7 +28,7 @@ The plug-in works on a [text field](https://docs.surveycto.com/02-designing-form
 
 | **Key** | **Value** |
 | --- | --- |
-| `link (required)` | The link to the web-published graph to be displayed in the iframe. For Google Sheets, you can follow the steps in [this article](https://support.google.com/docs/answer/1047436?co=GENIE.Platform%3DDesktop&hl=en) to get the link to your chart. |
+| `link (required)` | The link to the web-published content to be displayed in the iframe. For Google Sheets, you can follow the steps in [this article](https://support.google.com/docs/answer/1047436?co=GENIE.Platform%3DDesktop&hl=en) to get the link to your chart. |
 
 ## Example:
 
