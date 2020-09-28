@@ -1,14 +1,15 @@
-/* global $, getPluginParameter */
+/* global $, getPluginParameter, setMetaData */
 
 var dateModifiedContainer = document.getElementById('dateModified')
-
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
 $('#chart').hide()
 
 var dateModified = new Date(document.lastModified)
-var message = 'Last Updated ' + dateModified
+var message = 'Last updated ' + dateModified
 var errorMessage = 'Sorry, this is taking while! Are you connected to the internet? Wait a few moments, and try the Refresh button.'
+var result = 'failure'
+var answer
 
 var checkConnectivity = {
   isInternetConnected: function () {
@@ -26,11 +27,17 @@ checkConnectivity.isInternetConnected().done(function () {
   $('#chart').show() // Hide the loading section.
   drawChart()
   dateModifiedContainer.innerHTML = message
+  result = 'success'
+  answer = result + '|' + dateModified
 }).fail(function (jqXHR, textStatus, errorThrown) {
   // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
   $('.loading-container').hide() // Hide the loading section.
   dateModifiedContainer.innerHTML = errorMessage
+  result = 'fail'
+  answer = result + '|' + dateModified
 })
+
+setMetaData(answer)
 
 function refresh () {
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
