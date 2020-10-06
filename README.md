@@ -16,7 +16,9 @@ This field plug-in allows you to display content from a web source in [an iframe
 
 ## Data Format
 
-The plug-in works on a [text field](https://docs.surveycto.com/02-designing-forms/01-core-concepts/03a.field-types-text.html). The field does not save any data but is meant as a visual aid.
+The plug-in requires the [text field](https://docs.surveycto.com/02-designing-forms/01-core-concepts/03a.field-types-text.html) type. The field does not save any data (so do not make it required in form designs).
+
+The last updated time is recovered from the field plug-ins metadata using the [plug-in-metadata() function](https://docs.surveycto.com/02-designing-forms/01-core-concepts/09.expressions.html#plug-in-metadata).
 
 ## How to use
 
