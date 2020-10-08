@@ -6,7 +6,7 @@
 
 This field plug-in allows you to display content from a web source in [an iframe](https://www.w3schools.com/tags/tag_iframe.asp) as part of your form. The principle tested use case is displaying a [web-published Google sheet graph](https://support.google.com/docs/answer/1047436?hl=en&ref_topic=1361474), but the field plug-in may work well for other use cases. The content to be displayed needs to be public so sensitive information should not be shared this way. It uses an internet connection to display.
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/display-iframe/raw/master/display-graph.fieldplugin.zip)
+[![Download now](extras/download-button.png)](https://github.com/surveycto/display-iframe/raw/master/display-iframe.fieldplugin.zip)
 
 ## Features
 
@@ -22,8 +22,8 @@ The last updated time is recovered from the field plug-ins metadata using the [p
 
 ## How to use
 
-1. Download the test form [extras/sample-form](https://github.com/surveycto/display-graph/raw/master/extras/sample-form/Sample%20form%20-%20Display%20graph.xlsx) from this repo and upload it to your SurveyCTO server.
-1. Download the [display-graph.fieldplugin.zip](https://github.com/surveycto/display-graph/raw/master/display-graph.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Download the test form [extras/sample-form](https://github.com/surveycto/display-iframe/blob/master/extras/sample-form/Sample%20form%20-%20Display%20iframe.xlsx) from this repo and upload it to your SurveyCTO server.
+1. Download the [display-iframe.fieldplugin.zip](https://github.com/surveycto/display-iframe/raw/master/display-iframe.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
 1. Make sure to provide the correct parameter (see below).
 
 ## Parameters
