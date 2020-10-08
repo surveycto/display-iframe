@@ -8,8 +8,8 @@ $('#chart').hide()
 var dateModified = new Date(document.lastModified)
 var message = 'Last updated ' + dateModified
 var errorMessage = 'Sorry, this is taking while! Are you connected to the internet? Wait a few moments, and try the Refresh button.'
-var result = 'failure'
-var answer
+var result = 'fail'
+var answer = ' '
 
 var checkConnectivity = {
   isInternetConnected: function () {
@@ -21,30 +21,37 @@ var checkConnectivity = {
   }
 }
 
-checkConnectivity.isInternetConnected().done(function () {
-  // The resource is accessible - you are **probably** online.
-  $('.loading-container').hide() // Hide the loading section.
-  $('#chart').show() // Hide the loading section.
-  drawChart()
-  dateModifiedContainer.innerHTML = message
-  result = 'success'
-  answer = result + '|' + dateModified
-}).fail(function (jqXHR, textStatus, errorThrown) {
-  // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
-  $('.loading-container').hide() // Hide the loading section.
-  dateModifiedContainer.innerHTML = errorMessage
-  result = 'fail'
-  answer = result + '|' + dateModified
-})
+generateChart()
 
-setMetaData(answer)
+function generateChart () {
+  checkConnectivity.isInternetConnected().done(function () {
+    // The resource is accessible - you are **probably** online.
+    $('.loading-container').hide() // Hide the loading section.
+    $('#chart').show() // Hide the loading section.
+    result = 'success'
+    answer = result + '|' + dateModified.toString()
+    drawChart()
+    dateModifiedContainer.innerHTML = message
+    setAnswer(result)
+    setMetaData(answer)
+  }).fail(function (jqXHR, textStatus, errorThrown) {
+    // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
+    $('.loading-container').hide() // Hide the loading section.
+    dateModifiedContainer.innerHTML = errorMessage
+    result = 'fail'
+    answer = result + '|' + dateModified
+    setAnswer(result)
+    setMetaData(answer)
+  })
+}
 
 function refresh () {
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
-  $('#chart').show() // Hide the loading section.
-  drawChart()
-  dateModifiedContainer.innerHTML = message
-  document.getElementById('chart-frame').src = document.getElementById('chart-frame').src // reload iframe.
+  generateChart()
+  // $('#chart').show() // Hide the loading section.
+  // drawChart()
+  // dateModifiedContainer.innerHTML = message
+  // document.getElementById('chart-frame').src = document.getElementById('chart-frame').src // reload iframe.
 }
 
 function drawChart () {
