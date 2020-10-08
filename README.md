@@ -22,8 +22,8 @@ The last updated time is recovered from the field plug-ins metadata using the [p
 
 ## How to use
 
-1. Download the test form [extras/sample-form](https://github.com/surveycto/display-graph/raw/master/extras/sample-form/Sample%20form%20-%20Display%20graph.xlsx) from this repo and upload it to your SurveyCTO server.
-1. Download the [display-graph.fieldplugin.zip](https://github.com/surveycto/display-graph/raw/master/display-graph.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Download the test form [extras/sample-form](https://github.com/surveycto/display-iframe/blob/master/extras/sample-form/Sample%20form%20-%20Display%20iframe.xlsx) from this repo and upload it to your SurveyCTO server.
+1. Download the [display-iframe.fieldplugin.zip](https://github.com/surveycto/display-iframe/blob/master/display-iframe.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
 1. Make sure to provide the correct parameter (see below).
 
 ## Parameters
