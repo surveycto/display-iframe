@@ -4,7 +4,7 @@
 
 ## Description
 
-This field plug-in allows you to display content from a web source in [an iframe](https://www.w3schools.com/tags/tag_iframe.asp) as part of your form. The principle tested use case is displaying a [web-published Google sheet graph](https://support.google.com/docs/answer/1047436?hl=en&ref_topic=1361474), but the field plug-in may work well for other use cases. The content to be displayed needs to be public so sensitive information should not be shared this way. It uses an internet connection to display.
+This field plug-in allows you to display content from a web source in [an iframe](https://www.w3schools.com/tags/tag_iframe.asp) as part of your form. The principle tested use case is displaying a [web-published Google sheet graph](https://support.google.com/docs/answer/1047436?hl=en&ref_topic=1361474), but the field plug-in may work well for other use cases. The content to be displayed needs to be public so sensitive information should not be shared this way. It uses an internet connection to display content.
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/display-iframe/raw/master/display-iframe.fieldplugin.zip)
 
