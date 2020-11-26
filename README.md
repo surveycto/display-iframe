@@ -16,7 +16,12 @@ This field plug-in allows you to display content from a web source in [an iframe
 
 ## Data Format
 
-The plug-in requires the [text field](https://docs.surveycto.com/02-designing-forms/01-core-concepts/03a.field-types-text.html) type. The field does not save any data (so do not make it required in form designs).
+The plug-in requires the [text field](https://docs.surveycto.com/02-designing-forms/01-core-concepts/03a.field-types-text.html) type. The field stores the following values:
+
+1. `success` - if the graph loads successfully.
+1. `fail` - if the graph fails to load.
+
+**NOTE** - The following message will appear if the plug-in is having issues with connectivity - ***Sorry, this is taking a while! Are you connected to the internet? Wait a few moments, and try the Refresh button.***
 
 The last updated time is recovered from the field plug-ins metadata using the [plug-in-metadata() function](https://docs.surveycto.com/02-designing-forms/01-core-concepts/09.expressions.html#plug-in-metadata).
 
