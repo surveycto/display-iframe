@@ -41,7 +41,7 @@ The last updated time is recovered from the field plug-ins metadata using the [p
 
 To display this [sample chart](https://docs.google.com/spreadsheets/d/1celfPEyKUThteeWtJtb0JptUmzX7QNCPuwBXlcWJLTI/edit#gid=1173610336) in the form, you would have the following in the appearance column:
 
-`custom-display-graph(link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTD80eAbc3rcSYPu4hMoCOZDkyKZ0kD5SZ2FowYN-EXWlN0jrP4T22osV_P_9DgrJJum4FwFtt11NkX/pubchart?oid=148310736&format=interactive")`
+`custom-display-iframe(link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTD80eAbc3rcSYPu4hMoCOZDkyKZ0kD5SZ2FowYN-EXWlN0jrP4T22osV_P_9DgrJJum4FwFtt11NkX/pubchart?oid=148310736&format=interactive")`
 
 ## More resources
 
