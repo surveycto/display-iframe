@@ -11,21 +11,11 @@ var errorMessage = 'Sorry, this is taking a while! Are you connected to the inte
 var result = 'fail'
 var answer = ' '
 
-var checkConnectivity = {
-  isInternetConnected: function () {
-    return $.get({
-      url: 'https://cors-anywhere.herokuapp.com/https://www.gstatic.com/generate_204',
-      dataType: 'text',
-      cache: false
-    })
-  }
-}
-
 generateChart()
 
 function generateChart () {
-  checkConnectivity.isInternetConnected().done(function () {
-    // The resource is accessible - you are **probably** online.
+  if (navigator.onLine) {
+    console.log('online');
     $('.loading-container').hide() // Hide the loading section.
     $('#chart').show() // Hide the loading section.
     result = 'success'
@@ -34,24 +24,20 @@ function generateChart () {
     dateModifiedContainer.innerHTML = message
     setAnswer(result)
     setMetaData(answer)
-  }).fail(function (jqXHR, textStatus, errorThrown) {
-    // Something went wrong. Test textStatus/errorThrown to find out what. You may be offline.
+  } else {
+    console.log('offline');
     $('.loading-container').hide() // Hide the loading section.
     dateModifiedContainer.innerHTML = errorMessage
     result = 'fail'
     answer = result + '|' + dateModified
     setAnswer(result)
     setMetaData(answer)
-  })
+  }
 }
 
 function refresh () {
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
   generateChart()
-  // $('#chart').show() // Hide the loading section.
-  // drawChart()
-  // dateModifiedContainer.innerHTML = message
-  // document.getElementById('chart-frame').src = document.getElementById('chart-frame').src // reload iframe.
 }
 
 function drawChart () {
