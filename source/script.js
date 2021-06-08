@@ -1,21 +1,22 @@
 /* global $, getPluginParameter, setMetaData */
 
-var dateModifiedContainer = document.getElementById('dateModified')
+var dateModifiedContainer = document.getElementById('dateModified') // Container that displays the date modified.
 var chartLink = getPluginParameter('link') // Get the link parameter.
 $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
-$('#chart').hide()
+$('#chart').hide() // Hide the chart by default.
 
-var dateModified = new Date(document.lastModified)
-var message = 'Last updated ' + dateModified
-var errorMessage = 'Sorry, this is taking a while! Are you connected to the internet? Wait a few moments, and try the Refresh button.'
-var result = 'fail'
-var answer = ' '
+var dateModified = new Date(document.lastModified) // Store date modified.
+var message = 'Last updated ' + dateModified // Store message to be displayed.
+var errorMessage = 'Sorry, this is taking a while! Are you connected to the internet? Wait a few moments, and try the Refresh button.' // Store error message.
+var result = 'fail' // Store result of connection default is fail.
+var answer = ' ' // Variable to store final answer.
 
 generateChart()
 
+// FUNCTIONS
+
 function generateChart () {
-  if (navigator.onLine) {
-    console.log('online');
+  if (navigator.onLine) { // If browser is online.
     $('.loading-container').hide() // Hide the loading section.
     $('#chart').show() // Hide the loading section.
     result = 'success'
@@ -25,11 +26,11 @@ function generateChart () {
     setAnswer(result)
     setMetaData(answer)
   } else {
-    console.log('offline');
     $('.loading-container').hide() // Hide the loading section.
     dateModifiedContainer.innerHTML = errorMessage
     result = 'fail'
     answer = result + '|' + dateModified
+    $('#chart').hide() // Hide the loading section.
     setAnswer(result)
     setMetaData(answer)
   }
