@@ -17,8 +17,11 @@ generateChart()
 
 function generateChart () {
   if (navigator.onLine) { // If browser is online.
-    $('.loading-container').hide() // Hide the loading section.
-    $('#chart').show() // Hide the loading section.
+    $('.loading-container').show() // Hide the loading section.
+    $('#chart-frame').on('load', function () {
+      $('.loading-container').hide() // Hide the loading section.
+      $('#chart').show() // Hide the loading section.
+    })
     result = 'success'
     answer = result + '|' + dateModified.toString()
     drawChart()
@@ -26,7 +29,7 @@ function generateChart () {
     setAnswer(result)
     setMetaData(answer)
   } else {
-    $('.loading-container').hide() // Hide the loading section.
+    // $('.loading-container').hide() // Hide the loading section.
     dateModifiedContainer.innerHTML = errorMessage
     result = 'fail'
     answer = result + '|' + dateModified
@@ -37,6 +40,7 @@ function generateChart () {
 }
 
 function refresh () {
+  $('#chart').hide() // Hide the loading section.
   $('#chart-frame').attr('src', chartLink) // Set the link for the iframe.
   generateChart()
 }
@@ -60,5 +64,6 @@ function drawChart () {
       $(window).on('resize', iframeScaler)
       $(document).ready(iframeScaler)
     })
+    // $('.loading-container').hide()
   })
 }
